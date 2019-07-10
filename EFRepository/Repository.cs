@@ -61,7 +61,10 @@ namespace EFRepository
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            if (this.Context != null)
+            {
+                Context.Dispose();
+            }
         }
 
         public TEntity FindEntity<TEntity>(Expression<Func<TEntity, bool>> criteria) where TEntity : class
