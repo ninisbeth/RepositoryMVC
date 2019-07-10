@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Repository: EFRepository.Repository, IDisposable, IRepository 
+    public class RepositoryUoW:EFRepository.RepositoryUoW,IDisposable, IUnitOfWork 
     {
-        public Repository(bool autoDetectChangesEnabled = false,
+        public RepositoryUoW(bool autoDetectChangesEnabled = false,
                           bool proxyCreationEnabled = false) : base(
                           new NorthwindEntities(), autoDetectChangesEnabled,
                           proxyCreationEnabled)
-        { }
+        {
+        } 
     }
 }
