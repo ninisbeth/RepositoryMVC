@@ -72,7 +72,7 @@ namespace EFRepository
             TEntity Result = null;
             try
             {
-                Result = Context.Set<TEntity>().FirstOrDefault(criteria);
+                Result = Context.Set<TEntity>().AsNoTracking().FirstOrDefault(criteria);
             }
             catch (Exception e)
             {
@@ -87,7 +87,7 @@ namespace EFRepository
             List<TEntity> Result = null;
             try
             {
-                Result = Context.Set<TEntity>().Where(criteria).ToList();
+                Result = Context.Set<TEntity>().AsNoTracking().Where(criteria).ToList();
             }
             catch (Exception e)
             {
